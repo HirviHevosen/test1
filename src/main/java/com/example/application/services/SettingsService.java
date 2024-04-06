@@ -101,11 +101,7 @@ public class SettingsService {
         }
     }
 
-    public List<FormSubmissionRecord> findAllContacts() {
-        List<FormSubmission> all = formSubmissionRepository.findAllWithCompany();
-        return all.stream()
-                .map(this::toContactRecord).toList();
-    }
+
 
     private FormSubmission createFormSubmission(FormSubmissionRecord contact, CloudSchema cloudSchema) {
         var formSubmission = new FormSubmission();

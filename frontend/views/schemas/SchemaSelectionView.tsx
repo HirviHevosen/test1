@@ -1,6 +1,5 @@
 import CloudSchemaRecord from 'Frontend/generated/com/example/application/services/SettingsService/CloudSchemaRecord';
 import FormSubmissionRecord from 'Frontend/generated/com/example/application/services/SettingsService/FormSubmissionRecord';
-import FormSubmissionRecordModel from 'Frontend/generated/com/example/application/services/SettingsService/FormSubmissionRecordModel';
 import {useEffect, useState} from 'react';
 import {SettingsService} from "Frontend/generated/endpoints";
 import {Grid} from "@hilla/react-components/Grid";
@@ -16,29 +15,9 @@ export default function SchemaSelectionView() {
     }, []);
 
     async function onFormSaved(contact: FormSubmissionRecord) {
-   // console.log(JSON.stringify(contact));
-    // var c = new FormSubmissionRecordModel(0, JSON.stringify(contact), selected as CloudSchemaRecord);
-    // c.setCloudSchemas(selected as CloudSchemaRecord);
-    // c.setData(JSON.stringify(contact));
-/*
-    var c: FormSubmissionRecord = {
-        data: JSON.stringify(contact),
-        cloudSchema: selected as CloudSchemaRecord,
-        id: contact.id
-    } as FormSubmissionRecord;
-    */
 
-    const saved = await SettingsService.save(contact);
+        const saved = await SettingsService.save(contact);
 
-
-        /*
-        if (contact.id) {
-            setContacts(contacts => contacts.map(current => current.id === saved.id ? saved : current));
-        } else {
-            setContacts(contacts => [...contacts, saved]);
-        }
-        setSelected(saved);
-        */
     }
 
     return (

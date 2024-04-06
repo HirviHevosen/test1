@@ -1,4 +1,3 @@
-import ContactsView from 'Frontend/views/contacts/ContactsView.js';
 import SchemaSelectionView from 'Frontend/views/schemas/SchemaSelectionView.js';
 import MainLayout from 'Frontend/views/MainLayout.js';
 import { lazy } from 'react';
@@ -12,7 +11,6 @@ export const routes = [
     handle: { title: 'Hilla CRM' },
     children: [
       { path: '/', element: <SchemaSelectionView />, handle: { title: 'Contacts' } },
-      { path: '/contacts', element: <ContactsView />, handle: { title: 'Contacts' } },
       { path: '/about', element: <AboutView />, handle: { title: 'About' } },
     ],
   },
